@@ -19,7 +19,7 @@ struct ball{
 	int y_step;				//y的变化率
 	int shape;				//球的形状
 	int size;				//球的尺寸
-	int select_status;		//是否被选中
+	int select_status;		//是否被选中（1为选中并上色，2为选中但不上色）
 };
 
 //储存球信息的链表的声明
@@ -35,20 +35,23 @@ struct player{
 };
 
 /******main.cpp中各个函数的原型*********/
-void main_interface();																//画界面
-void button_respond(node_ball * Head,int * ball_count								//可传入头结点 球数 玩家信息
-					, struct player * point_player, int * game_status); 
-void move_ball(node_ball * Head, int * ball_count);									//可传入头节点和球数
-void display_player_info(struct player * p);										//显示更新玩家信息
-void input_player_info(struct player * point_player);								//输入玩家信息
+void main_interface();															//画界面
+void button_respond(node_ball * Head,int * ball_count							//可传入头结点 球数 玩家信息
+					, struct player * point_player, int * game_status);
+void move_ball(node_ball * Head, int * ball_count);								//可传入头节点和球数
+void display_player_info(struct player * p);									//显示更新玩家信息
+void display_ball_count(int * ball_count);
+void input_player_info(struct player * point_player);							//输入玩家信息
 
 /******buffton_respond.cpp中各个函数的原型*******/
 void add_ball(node_ball * Head, int * ball_count);										//添加球
 void delete_ball(node_ball * Head, int * ball_count, struct player * point_player);		//删除球
 void select_ball(node_ball * Head, int * ball_count, MOUSEMSG m);						//第三个参数是鼠标消息
-int pause_game(int game_status);														//暂停游戏
-void exit_game(struct player * point_player, struct node_ball * Head);											//退出游戏
+void exit_game(struct player * point_player, struct node_ball * Head);					//退出游戏
 int save_game(struct node_ball * Head, struct player * point_player, int * ball_count); //保存游戏状态
-int read_game(struct node_ball * Head, struct player * point_player, int * ball_count); //读取游戏状态
+int load_game(struct node_ball * Head, struct player * point_player, int * ball_count); //读取游戏状态
 
-
+/******main_interface.cpp中各个函数的原型********/																						//函数原型
+void main_interface_button();				//按钮绘制
+void main_interface_line();					//线绘制
+void main_interface_button_text();			//按钮中的文字绘制

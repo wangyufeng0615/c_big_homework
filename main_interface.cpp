@@ -5,11 +5,6 @@
 
 #include "Header.h"
 
-//函数原型
-void main_interface_button();				//按钮绘制
-void main_interface_line();					//线绘制
-void main_interface_button_text();			//按钮中的文字绘制
-
 void main_interface()
 {
 	initgraph(1000, 600);					//初始化

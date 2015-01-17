@@ -25,7 +25,7 @@ void add_ball(node_ball * Head, int * ball_count)
 	s->next = NULL;										   //新生成的球的*next赋NULL
 	
 	//为新申请的球赋各种数据
-	s->info_ball.select_status = false;						//默认是未选中状态
+	s->info_ball.select_status = 0;						//默认是未选中状态
 	
 	_stprintf_s(s->info_ball.figure, _T("%d"), rand()% 9 + 1); //随机的分数，1~9
 
@@ -45,8 +45,8 @@ void add_ball(node_ball * Head, int * ball_count)
 		s->info_ball.y_step = rand() % 7 - 3;
 	}
 
-	//s->info_ball.shape = rand() % 4 + 1;					//随机形状
-	s->info_ball.shape = 1;									//临时调试,只生成圆形
+	s->info_ball.shape = rand() % 2 + 1;						//随机形状
+	//s->info_ball.shape = 1;								//临时调试,只生成圆形
 
 	s->info_ball.size = rand() % 30 + 20;					//随机大小
 

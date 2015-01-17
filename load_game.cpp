@@ -1,11 +1,11 @@
 /*
- *	read_game.cpp
+ *	road_game.cpp
  *	¶ÁÈ¡ÓÎÏ·×´Ì¬
  */
 
 #include "Header.h"
 
-int read_game(struct node_ball * Head, struct player * point_player, int * ball_count)
+int load_game(struct node_ball * Head, struct player * point_player, int * ball_count)
 {
 	struct node_ball * p;
 	p = Head;

@@ -25,7 +25,8 @@ void exit_game(struct player * point_player, struct node_ball * Head)
 	//TCHAR*转char*
 	char playername_output[20];						
 	WideCharToMultiByte(CP_ACP, 0, point_player->playername, 20, playername_output, 20, 0, 0);
-	fprintf(fp_result, "%s\t\t用户名:%s\t\t\t分数:%d\n", time_temp, playername_output, point_player->score);
+	fprintf(fp_result, "%s\t\t用户名:%s\t\t\t分数:%d\n", time_temp, 
+			playername_output, point_player->score);
 	fclose(fp_result);
 
 	//弹出提示消息
