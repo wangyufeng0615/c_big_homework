@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C语课设第二题", "C语课设第二题\C语课设第二题.vcxproj", "{4BB9F1E0-5E86-4FAC-AE69-2F245B7B468E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ball_moving", "C语课设第二题\C语课设第二题.vcxproj", "{4BB9F1E0-5E86-4FAC-AE69-2F245B7B468E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
