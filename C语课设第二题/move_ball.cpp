@@ -4,6 +4,7 @@
 */
 
 #include "Header.h"
+#define DIM 1000
 
 void move_ball(node_ball * Head, int * ball_count, int * level)
 {
@@ -110,7 +111,19 @@ void move_ball(node_ball * Head, int * ball_count, int * level)
 
         p = p->next;
     }
+
+    ////全屏模糊
+    //DWORD* pMem = GetImageBuffer();
+    //for(int i = DIM; i < DIM * 599; i++)
+    //{
+    //    pMem[i] = RGB(
+    //        (GetRValue(pMem[i]) + GetRValue(pMem[i - DIM]) + GetRValue(pMem[i - 1]) + GetRValue(pMem[i + 1]) + GetRValue(pMem[i + DIM])) / 5,
+    //        (GetGValue(pMem[i]) + GetGValue(pMem[i - DIM]) + GetGValue(pMem[i - 1]) + GetGValue(pMem[i + 1]) + GetGValue(pMem[i + DIM])) / 5,
+    //        (GetBValue(pMem[i]) + GetBValue(pMem[i - DIM]) + GetBValue(pMem[i - 1]) + GetBValue(pMem[i + 1]) + GetBValue(pMem[i + DIM])) / 5);
+    //}
+    
     FlushBatchDraw(); //一次画全部的球，避免闪烁
+   
     Sleep(*level);         //毫秒
 
     return;
