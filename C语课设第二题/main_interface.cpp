@@ -12,9 +12,9 @@ void main_interface()
     cleardevice();                  //清空
 
     setlinecolor(BLACK);            //设置线条黑色
-    setlinestyle(PS_SOLID, 5);      //宽度5
+    setlinestyle(PS_SOLID, 8);      //宽度8
     rectangle(20, 20, 980, 580);    //画大边框
-    setlinestyle(PS_SOLID, 1);      //宽度还原
+    setlinestyle(PS_SOLID, 3);      //宽度还原
 
     main_interface_button();        //画各个按钮边框
     main_interface_line();          //画横竖两条线
@@ -63,6 +63,16 @@ void main_interface_button_text()
     outtextxy(865 - 5, 353, _T("继续"));
     outtextxy(865 - 5, 53,  _T("导出"));
     outtextxy(865 - 5, 153, _T("导入"));
+    
+    //ball_text.lfHeight = 10;
+    outtextxy(820,     420, _T("难度"));
+    ball_text.lfHeight = 10;
+    outtextxy(895,     422, _T("+"));
+    outtextxy(935,     422, _T("-"));
+
+    setlinecolor(BLACK);            //设置线条黑色
+    rectangle(890, 425, 915, 450);  //难度增加
+    rectangle(930, 425, 955, 450);  //难度减小
 
     return;
 }

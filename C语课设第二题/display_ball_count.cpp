@@ -8,7 +8,7 @@
 void display_ball_count(int * ball_count)
 {
     setbkcolor(WHITE);
-    clearrectangle(860, 530, 960, 560);                     //刷新球数区域
+    clearrectangle(860, 535, 960, 560);                     //刷新球数区域
 
     settextcolor(BLACK);
     setbkcolor(WHITE);

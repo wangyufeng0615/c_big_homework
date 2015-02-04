@@ -5,7 +5,7 @@
 
 #include "Header.h"
 
-void move_ball(node_ball * Head, int * ball_count)
+void move_ball(node_ball * Head, int * ball_count, int * level)
 {
     node_ball * p = NULL;               //操作指针
     p = Head->next;                     //从第一个球开始
@@ -37,9 +37,9 @@ void move_ball(node_ball * Head, int * ball_count)
             setbkcolor(RED);   //颜色还原
 
             //边缘检测
-            if (p->info_ball.x - p->info_ball.size - 4 <= 20)       //碰左边线
+            if (p->info_ball.x - p->info_ball.size - 6 <= 20)       //碰左边线
             {
-                p->info_ball.x = 20 + p->info_ball.size + 4;
+                p->info_ball.x = 20 + p->info_ball.size + 6;
                 p->info_ball.x_step = p->info_ball.x_step * -1;
             }
             else if (p->info_ball.x + p->info_ball.size + 4 >= 800) //碰右边线
@@ -52,9 +52,9 @@ void move_ball(node_ball * Head, int * ball_count)
                 p->info_ball.y = 120 + p->info_ball.size + 4;
                 p->info_ball.y_step = p->info_ball.y_step * -1;
             }
-            else if (p->info_ball.y + p->info_ball.size + 4 >= 580) //碰下边线
+            else if (p->info_ball.y + p->info_ball.size + 6 >= 580) //碰下边线
             {
-                p->info_ball.y = 580 - p->info_ball.size - 4;
+                p->info_ball.y = 580 - p->info_ball.size - 6;
                 p->info_ball.y_step = p->info_ball.y_step * -1;
             }
             break;
@@ -81,9 +81,9 @@ void move_ball(node_ball * Head, int * ball_count)
             setbkcolor(RED); //颜色还原
 
             //边缘检测
-            if (p->info_ball.x - p->info_ball.size - 4 <= 20)       //碰左边线
+            if (p->info_ball.x - p->info_ball.size - 6 <= 20)       //碰左边线
             {
-                p->info_ball.x = 20 + p->info_ball.size + 4;
+                p->info_ball.x = 20 + p->info_ball.size + 6;
                 p->info_ball.x_step = p->info_ball.x_step * -1;
             }
             else if (p->info_ball.x + p->info_ball.size + 4 >= 800) //碰右边线
@@ -96,9 +96,9 @@ void move_ball(node_ball * Head, int * ball_count)
                 p->info_ball.y = 120 + p->info_ball.size + 4;
                 p->info_ball.y_step = p->info_ball.y_step * -1;
             }
-            else if (p->info_ball.y + p->info_ball.size + 4 >= 580) //碰下边线
+            else if (p->info_ball.y + p->info_ball.size + 6 >= 580) //碰下边线
             {
-                p->info_ball.y = 580 - p->info_ball.size - 4;
+                p->info_ball.y = 580 - p->info_ball.size - 6;
                 p->info_ball.y_step = p->info_ball.y_step * -1;
             }
             break;
@@ -111,7 +111,7 @@ void move_ball(node_ball * Head, int * ball_count)
         p = p->next;
     }
     FlushBatchDraw(); //一次画全部的球，避免闪烁
-    Sleep(5);         //毫秒
+    Sleep(*level);         //毫秒
 
     return;
 }

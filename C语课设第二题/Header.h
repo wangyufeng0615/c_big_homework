@@ -38,7 +38,7 @@ struct player{
 void main_interface();                                  //画界面
 void button_respond(node_ball * Head,int * ball_count   //可传入头结点 球数 玩家信息
                     , struct player * point_player, int * game_status);
-void move_ball(node_ball * Head, int * ball_count);     //可传入头节点和球数
+void move_ball(node_ball * Head, int * ball_count, int * level);     //可传入头节点和球数
 void display_player_info(struct player * p);            //显示更新玩家信息
 void display_ball_count(int * ball_count);
 void input_player_info(struct player * point_player);   //输入玩家信息
