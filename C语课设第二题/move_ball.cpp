@@ -113,8 +113,5 @@ void move_ball(node_ball * Head, int * ball_count)
     FlushBatchDraw(); //一次画全部的球，避免闪烁
     Sleep(5);         //毫秒
 
-    setbkcolor(WHITE);
-    clearrectangle(22, 122, 798, 578);
-
     return;
 }
