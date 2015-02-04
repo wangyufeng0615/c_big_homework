@@ -8,6 +8,8 @@ int main()
 
     int game_status = 1;                            //游戏状态，1为运行，0为暂停
 
+    int level = 5;                                  //默认的难度为5(Sleep)
+
     //玩家信息
     struct player player1;
     player1.score = 0;                              //分数初始化为0
@@ -30,7 +32,7 @@ int main()
     {
         BeginBatchDraw(); //开始批绘制 对应FlushBatchDraw()
 
-        button_respond(Head, &ball_count, &player1, &game_status); //按钮响应
+        button_respond(Head, &ball_count, &player1, &game_status, &level); //按钮响应
 
         display_player_info(&player1);      //更新玩家信息
         display_ball_count(&ball_count);    //更新球数信息
@@ -39,10 +41,10 @@ int main()
         {
             if(game_status)                 //如果游戏状态为1时（运行）
             {
-                move_ball(Head, &ball_count); //球的运动
+                move_ball(Head, &ball_count, &level); //球的运动
 
                 setbkcolor(WHITE);          //用白色清屏
-                clearrectangle(22, 122, 798, 578);
+                clearrectangle(24, 121, 798, 576);
             }
         }
         else //没球时刷新一下,避免玩家和球信息闪烁

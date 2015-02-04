@@ -9,7 +9,7 @@ void display_player_info(struct player * point_player)
 {
     //刷新玩家信息区域
     setbkcolor(WHITE);
-    clearrectangle(482, 24, 798, 118);
+    clearrectangle(482, 26, 798, 118);
 
     //调整颜色
     setbkcolor(WHITE);                              //背景颜色

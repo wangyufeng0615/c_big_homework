@@ -35,7 +35,7 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
 
             //更新玩家信息
             setbkcolor(WHITE);
-            clearrectangle(482, 23, 778, 118);
+            clearrectangle(482, 26, 798, 118);
             display_player_info(point_player);
 
             free(temp);                             //释放被删除球的空间
@@ -49,7 +49,7 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
             else //一个球也不剩了
             {
                 setfillcolor(WHITE);
-                solidrectangle(22, 122, 798, 578);  //用白色清屏
+                clearrectangle(24, 121, 798, 576);  //用白色清屏
             }
 
             break; //!!!
