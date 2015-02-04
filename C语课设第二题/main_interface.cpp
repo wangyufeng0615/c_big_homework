@@ -38,7 +38,7 @@ void main_interface_button()
 
 void main_interface_line()
 {
-    setlinestyle(PS_SOLID, 2);      //线宽
+    setlinestyle(PS_SOLID, 3);      //线宽
     setlinecolor(BLUE);             //蓝色
     line(20, 120, 800, 120);        //画横线
     line(800, 20, 800, 580);        //画竖线
