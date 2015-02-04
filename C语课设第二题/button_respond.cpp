@@ -55,23 +55,23 @@ struct player * point_player, int * game_status, int * level)
                 }
                 if (m.x >= 890 && m.x <= 915 && m.y >= 425 && m.y <= 450) //难度增加
                 {
-                    if (*level >= 0 && *level <= 10)
+                    if (*level >= 0 && *level <= 12)
                     {
-                        (*level)--;
-                        if (-1 == *level)
+                        *level -= 2;
+                        if (-2 == *level)
                         {
-                            (*level)++;
+                            *level += 2;
                         }
                     }
                 }
                 if (m.x >= 930 && m.x <= 955 && m.y >= 425 && m.y <= 450) //难度减小
                 {
-                    if (*level >= 0 && *level <= 10)
+                    if (*level >= 0 && *level <= 12)
                     {
-                        (*level)++;
+                        *level += 2;
                         if (11 == *level)
                         {
-                            (*level)--;
+                            *level -= 2;
                         }
                     }
                 }
