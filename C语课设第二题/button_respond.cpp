@@ -6,7 +6,7 @@
 #include "Header.h"
 
 void button_respond(struct node_ball * Head, int * ball_count,
-struct player * point_player, int * game_status)
+struct player * point_player, int * game_status, int * level)
 {
     MOUSEMSG m;
 
@@ -53,7 +53,28 @@ struct player * point_player, int * game_status)
                             MB_SYSTEMMODAL | MB_ICONASTERISK);
                     }
                 }
-
+                if (m.x >= 890 && m.x <= 915 && m.y >= 425 && m.y <= 450) //难度增加
+                {
+                    if (*level >= 0 && *level <= 10)
+                    {
+                        (*level)--;
+                        if (-1 == *level)
+                        {
+                            (*level)++;
+                        }
+                    }
+                }
+                if (m.x >= 930 && m.x <= 955 && m.y >= 425 && m.y <= 450) //难度减小
+                {
+                    if (*level >= 0 && *level <= 10)
+                    {
+                        (*level)++;
+                        if (11 == *level)
+                        {
+                            (*level)--;
+                        }
+                    }
+                }
             }
             else if (0 == *game_status)         //当处于暂停时，只能按继续
             {

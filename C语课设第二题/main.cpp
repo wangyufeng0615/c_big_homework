@@ -32,7 +32,7 @@ int main()
     {
         BeginBatchDraw(); //开始批绘制 对应FlushBatchDraw()
 
-        button_respond(Head, &ball_count, &player1, &game_status); //按钮响应
+        button_respond(Head, &ball_count, &player1, &game_status, &level); //按钮响应
 
         display_player_info(&player1);      //更新玩家信息
         display_ball_count(&ball_count);    //更新球数信息
