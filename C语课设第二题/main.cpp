@@ -8,7 +8,7 @@ int main()
 
     int game_status = 1;                            //游戏状态，1为运行，0为暂停
 
-    int level = 5;                                  //默认的难度为5(Sleep)
+    int level = 6;                                  //默认的难度为6(Sleep)
 
     //玩家信息
     struct player player1;
