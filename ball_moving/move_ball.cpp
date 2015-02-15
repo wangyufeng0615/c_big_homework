@@ -4,7 +4,7 @@
 */
 
 #include "Header.h"
-#define DIM 1000
+#define DIM 1000                        //模糊用的参数
 
 void move_ball(node_ball * Head, int * ball_count, int * level)
 {

@@ -1,14 +1,16 @@
 /*版本更新信息在README.md中*/
 
 #include "Header.h"
+#define DEFAULT_DIFFICULTY 6                        //默认难度(越小越快)
+#define DEFAULT_STATUS 1                            //默认游戏状态，1运行，0暂停
 
 int main()
 {
     main_interface();                               //绘制界面
 
-    int game_status = 1;                            //游戏状态，1为运行，0为暂停
+    int game_status = DEFAULT_STATUS;               //游戏状态，1运行，0暂停
 
-    int level = 6;                                  //默认的难度为6(Sleep)
+    int level = DEFAULT_DIFFICULTY;                 //默认的难度为6(Sleep)
 
     //玩家信息
     struct player player1;

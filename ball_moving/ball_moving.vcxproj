@@ -107,7 +107,7 @@
     <Text Include="save.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="C语课设第二题.rc" />
+    <ResourceCompile Include="ball_moving.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico" />
