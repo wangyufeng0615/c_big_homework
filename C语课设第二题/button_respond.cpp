@@ -58,9 +58,9 @@ struct player * point_player, int * game_status, int * level)
                     if (*level >= 0 && *level <= 12)
                     {
                         *level -= 2;
-                        if (-2 == *level)
+                        if (0 > *level)
                         {
-                            *level += 2;
+                            *level = 0;     //最快速度
                         }
                     }
                 }
@@ -69,9 +69,9 @@ struct player * point_player, int * game_status, int * level)
                     if (*level >= 0 && *level <= 12)
                     {
                         *level += 2;
-                        if (11 == *level)
+                        if (12 < *level)
                         {
-                            *level -= 2;
+                            *level = 12;    //最慢速度
                         }
                     }
                 }

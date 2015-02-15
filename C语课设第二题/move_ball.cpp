@@ -124,7 +124,7 @@ void move_ball(node_ball * Head, int * ball_count, int * level)
     
     FlushBatchDraw(); //一次画全部的球，避免闪烁
    
-    Sleep(*level);         //毫秒
+    Sleep(*level);         //难度控制（单位毫秒）
 
     return;
 }
