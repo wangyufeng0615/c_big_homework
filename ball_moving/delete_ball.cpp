@@ -5,9 +5,9 @@
 
 #include "Header.h"
 
-void update_score(int add_score, struct player * point_player);
+void update_score(int add_score, struct player * point_player); //刷新玩家分数
 
-void delete_ball(node_ball * Head, int * ball_count, struct player * point_player)
+void delete_ball(node_ball * Head, int * ball_count, struct player * point_player, time_t current_time)
 {
     struct node_ball * p = Head;            //当前指针指向头结点
     struct node_ball * temp;                //用于free被删除的球
@@ -59,6 +59,54 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
             p = p->next;
         }
     }
+
+    //获胜条件触发：
+    if (point_player->score == (*ball_count) * 10 || point_player->score == 50)
+    {
+        int temp_level = 2;                 //临时的level条件，为了让球的状态刷新一次
+        display_ball_count(ball_count);    //更新球数信息
+        move_ball(Head, ball_count, &temp_level); //球的运动
+
+        if (point_player->score == (*ball_count) * 10)
+        {
+            MessageBox(NULL, _T("你赢啦！球数乘10等于分数！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+        }
+        if (point_player->score == 50)
+        {
+            MessageBox(NULL, _T("你赢啦！分数定格在50！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+        }
+
+        //设置时间
+        time_t t = time(0);
+        char time_temp[64];
+        struct tm lt;
+        localtime_s(&lt, &t);
+        strftime(time_temp, sizeof(time_temp), "%Y/%m/%d %X", &lt);
+
+        //文件指针
+        FILE * fp_result;
+        if (fopen_s(&fp_result, "player_info.txt", "a+"))
+        {
+            MessageBox(NULL, _T("成绩记录文件打开失败！"), _T("错误"), MB_SYSTEMMODAL);
+            return;
+        }
+
+        //TCHAR*转char*
+        char playername_output[20];
+        WideCharToMultiByte(CP_ACP, 0, point_player->playername, 20, playername_output, 20, 0, 0);
+        fprintf(fp_result, "%s\t\t用户名:%s\t\t\t用时:%d\n"
+                         , time_temp
+                         , playername_output
+                         , current_time);
+        fclose(fp_result);
+
+        //弹出提示消息
+        MessageBox(NULL,_T("用户名和用时等信息已保存至player_info.txt"), _T("拜拜~"), MB_SYSTEMMODAL | MB_ICONASTERISK);
+        
+        exit_game(point_player, Head);
+    }
+
+
 
     return;
 }

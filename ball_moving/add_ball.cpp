@@ -5,8 +5,14 @@
 
 #include "Header.h"
 
-void add_ball(node_ball * Head, int * ball_count)
+void add_ball(node_ball * Head, int * ball_count, bool * time_flag, time_t * initial_time)
 {
+    if (0 == *time_flag)
+    {
+        *initial_time = time(NULL);                         //若第一次增加球，初始化时间
+    }
+    *time_flag = 1;                                         //开始计时
+
     srand(clock());                                         //种子更新的速度比time()快（得多）
 
     node_ball * p = Head;                                   //当前指针指向头结点
@@ -17,7 +23,7 @@ void add_ball(node_ball * Head, int * ball_count)
         p = p->next;
     }
 
-    node_ball * s = (node_ball*)malloc(sizeof(node_ball));  //新生成的节点
+    node_ball * s = (node_ball*)malloc(sizeof(node_ball));  //新生成的结点
     if (s == NULL)
     {
         return;

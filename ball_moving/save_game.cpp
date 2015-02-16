@@ -5,7 +5,7 @@
 
 #include "Header.h"
 
-int save_game(struct node_ball * Head, struct player * point_player, int * ball_count)
+int save_game(struct node_ball * Head, struct player * point_player, int * ball_count, time_t current_time)
 {
     struct node_ball * p = Head;
 
@@ -31,9 +31,10 @@ int save_game(struct node_ball * Head, struct player * point_player, int * ball_
     fprintf(fp_save, "%d\n", *ball_count);
 
     //输出玩家名称和分数
-    fprintf(fp_save, "%s %d\n",
-        playername_output,
-        point_player->score);
+    fprintf(fp_save, "%s %d %d\n"
+            , playername_output
+            , point_player->score
+            , current_time);
 
     int i;
     for (i = 0; i < *ball_count; i++)
