@@ -5,7 +5,7 @@
 
 #include "Header.h"
 
-int load_game(struct node_ball * Head, struct player * point_player, int * ball_count)
+int load_game(struct node_ball * Head, struct player * point_player, int * ball_count, time_t * curret_time)
 {
     struct node_ball * p;
     p = Head;
@@ -24,8 +24,8 @@ int load_game(struct node_ball * Head, struct player * point_player, int * ball_
     char temp_figure[4];
     char playername_input[20] = {0};
 
-    //读玩家名字和分数
-    fscanf(fp_read, "%s %d\n", playername_input, &(point_player->score));
+    //读玩家名字 分数 用时
+    fscanf(fp_read, "%s %d %d\n", playername_input, &(point_player->score), curret_time);
 
     //把玩家名字从char转为TCHAR
     MultiByteToWideChar(CP_ACP, 0, playername_input, 20, point_player->playername, 20);

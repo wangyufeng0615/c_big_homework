@@ -51,7 +51,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 }
                 if (m.x >= 830 && m.x <= 950 && m.y <= 200 && m.y >= 140) //导入状态
                 {
-                    if(!load_game(Head, point_player, ball_count))
+                    if(!load_game(Head, point_player, ball_count, current_time))
                     {
                         MessageBox(NULL, _T("从save.txt读取状态成功！"), _T("提示"),
                             MB_SYSTEMMODAL | MB_ICONASTERISK);

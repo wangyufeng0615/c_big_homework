@@ -56,23 +56,24 @@ void ball_timer(time_t initial_time, time_t * current_time);
 void add_ball(node_ball * Head
               , int * ball_count
               , bool * time_flag
-              , time_t * initial_time);                      //添加球
+              , time_t * initial_time);                 //添加球
 void delete_ball(node_ball * Head
                 , int * ball_count
-                , struct player * point_player);       //删除球
+                , struct player * point_player);        //删除球
 void select_ball(node_ball * Head
                 , int * ball_count
                 , MOUSEMSG m
                 , struct player * point_player);        //第三个参数是鼠标消息
 void exit_game(struct player * point_player
-              , struct node_ball * Head);              //退出游戏
+              , struct node_ball * Head);               //退出游戏
 int save_game(struct node_ball * Head
              , struct player * point_player
              , int * ball_count
-             , time_t current_time);                      //保存游戏状态
+             , time_t current_time);                    //保存游戏状态
 int load_game(struct node_ball * Head
              , struct player * point_player
-             , int * ball_count);                      //读取游戏状态
+             , int * ball_count
+             , time_t * curret_time);                   //读取游戏状态
 
 /******main_interface.cpp中各个函数的原型********/
 void main_interface_button();                           //按钮绘制
