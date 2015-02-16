@@ -6,7 +6,7 @@
 #include "Header.h"
 
 void button_respond(struct node_ball * Head, int * ball_count,
-struct player * point_player, int * game_status, int * level)
+struct player * point_player, int * game_status, int * level, bool * time_flag)
 {
     MOUSEMSG m;
 
@@ -23,7 +23,7 @@ struct player * point_player, int * game_status, int * level)
                 }
                 if (m.x >= 40 && m.x <= 160 && m.y <= 100 && m.y >= 40)  //Ìí¼Ó
                 {
-                    add_ball(Head, ball_count);
+                    add_ball(Head, ball_count, time_flag);
                 }
                 if (m.x >= 200 && m.x <= 320 && m.y <= 100 && m.y >= 40) //É¾³ý
                 {

@@ -97,6 +97,7 @@
     <ClCompile Include="load_game.cpp" />
     <ClCompile Include="save_game.cpp" />
     <ClCompile Include="select_ball.cpp" />
+    <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />

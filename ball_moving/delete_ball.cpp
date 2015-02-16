@@ -60,6 +60,7 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
         }
     }
 
+    //获胜条件触发：
     if (point_player->score == (*ball_count) * 10 || point_player->score == 100)
     {
         int temp_level = 2;                 //临时的level条件，为了让球的状态刷新一次

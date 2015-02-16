@@ -30,7 +30,7 @@ int load_game(struct node_ball * Head, struct player * point_player, int * ball_
     //把玩家名字从char转为TCHAR
     MultiByteToWideChar(CP_ACP, 0, playername_input, 20, point_player->playername, 20);
 
-    //在读取状态之前，得先确保有跟save.txt中球数一样多个球的节点
+    //在读取状态之前，得先确保有跟save.txt中球数一样多个球的
     struct node_ball * s; //新节点
     int j;
     for (j = 0; j < *ball_count; j++)

@@ -12,6 +12,9 @@ int main()
 
     int level = DEFAULT_DIFFICULTY;                 //默认的难度为6(Sleep)
 
+    time_t initial_time = time(NULL);               //初始时间
+    bool time_flag = false;                         //为1时进行计时
+
     //玩家信息
     struct player player1;
     player1.score = 0;                              //分数初始化为0
@@ -34,10 +37,15 @@ int main()
     {
         BeginBatchDraw(); //开始批绘制 对应FlushBatchDraw()
 
-        button_respond(Head, &ball_count, &player1, &game_status, &level); //按钮响应
+        button_respond(Head, &ball_count, &player1, &game_status, &level, &time_flag); //按钮响应
 
         display_player_info(&player1);      //更新玩家信息
         display_ball_count(&ball_count);    //更新球数信息
+
+        if (1 == time_flag)                 //计时
+        {
+            ball_timer(initial_time);       
+        }
 
         if(ball_count != 0)                 //如果有球
         {
