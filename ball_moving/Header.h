@@ -42,14 +42,15 @@ void button_respond(node_ball * Head
                    , int * game_status
                    , int * level
                    , bool * time_flag
-                   , time_t * initial_time);   //可传入头结点 球数 玩家信息
+                   , time_t * initial_time
+                   , time_t * current_time);   //可传入头结点 球数 玩家信息
 void move_ball(node_ball * Head
               , int * ball_count
               , int * level);                           //可传入头结点和球数
 void display_player_info(struct player * p);            //显示更新玩家信息
 void display_ball_count(int * ball_count);              //更新球数
 void input_player_info(struct player * point_player);   //输入玩家信息
-void ball_timer(time_t initial_time);
+void ball_timer(time_t initial_time, time_t * current_time);
 
 /******buffton_respond.cpp中各个函数的原型*******/
 void add_ball(node_ball * Head
@@ -67,7 +68,8 @@ void exit_game(struct player * point_player
               , struct node_ball * Head);              //退出游戏
 int save_game(struct node_ball * Head
              , struct player * point_player
-             , int * ball_count);                      //保存游戏状态
+             , int * ball_count
+             , time_t current_time);                      //保存游戏状态
 int load_game(struct node_ball * Head
              , struct player * point_player
              , int * ball_count);                      //读取游戏状态

@@ -9,7 +9,7 @@ static time_t time_pause;               //实现暂停时不计时的功能（思路：initial_
 
 void button_respond(struct node_ball * Head, int * ball_count
                     , struct player * point_player, int * game_status
-                    , int * level, bool * time_flag, time_t * initial_time)
+                    , int * level, bool * time_flag, time_t * initial_time, time_t * current_time)
 {
     MOUSEMSG m;
 
@@ -43,7 +43,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 }
                 if (m.x >= 830 && m.x <= 950 && m.y >= 40 && m.y <= 100)  //保存状态
                 {
-                    if(!save_game(Head, point_player, ball_count))
+                    if(!save_game(Head, point_player, ball_count, *current_time))
                     {
                         MessageBox(NULL, _T("保存状态至save.txt成功！"), _T("提示"),
                             MB_SYSTEMMODAL | MB_ICONASTERISK);
