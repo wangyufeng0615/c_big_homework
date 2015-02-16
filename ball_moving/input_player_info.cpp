@@ -8,12 +8,16 @@
 void input_player_info(struct player * point_player)
 {
     //游戏说明
-    MessageBox(NULL, _T("选中球，然后删掉，球上的分值累加到分数。")
+    MessageBox(NULL, _T("两种方式取得胜利：通过删除球\n\
+1、分数正好达到50分\n\
+2、分数等于球数乘10\n\
+如果没点在球上会扣分\n\
+越快越好噢，加油！")
         , _T("游戏方式"),MB_ICONASTERISK | MB_SYSTEMMODAL);
 
     //输入用户名的InputBox
     InputBox(point_player->playername, 20, _T("请输入用户名：(10个字符以内)"),
-        _T("by Water Wang"), _T("WYF"), 0, 0, 1);
+        _T("by Tony Wang"), _T("Player"), 0, 0, 1);
 
     return;
 }
