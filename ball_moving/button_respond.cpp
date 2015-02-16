@@ -5,8 +5,11 @@
 
 #include "Header.h"
 
-void button_respond(struct node_ball * Head, int * ball_count,
-struct player * point_player, int * game_status, int * level, bool * time_flag)
+static time_t time_pause;
+
+void button_respond(struct node_ball * Head, int * ball_count
+                    , struct player * point_player, int * game_status
+                    , int * level, bool * time_flag, time_t * initial_time)
 {
     MOUSEMSG m;
 
@@ -23,7 +26,7 @@ struct player * point_player, int * game_status, int * level, bool * time_flag)
                 }
                 if (m.x >= 40 && m.x <= 160 && m.y <= 100 && m.y >= 40)  //Ìí¼Ó
                 {
-                    add_ball(Head, ball_count, time_flag);
+                    add_ball(Head, ball_count, time_flag, initial_time);
                 }
                 if (m.x >= 200 && m.x <= 320 && m.y <= 100 && m.y >= 40) //É¾³ý
                 {
@@ -36,6 +39,7 @@ struct player * point_player, int * game_status, int * level, bool * time_flag)
                 if (m.x <= 950 && m.x >= 830 && m.y >= 240 && m.y <= 300) //ÔÝÍ£
                 {
                     *game_status = 0;
+                    time_pause = time(NULL);                      
                 }
                 if (m.x >= 830 && m.x <= 950 && m.y >= 40 && m.y <= 100)  //±£´æ×´Ì¬
                 {
@@ -81,6 +85,7 @@ struct player * point_player, int * game_status, int * level, bool * time_flag)
                 if (m.x <= 950 && m.x >= 830 && m.y >= 340 && m.y <= 400) //¼ÌÐø
                 {
                     *game_status = 1;
+                    *initial_time += (time(NULL) - time_pause);
                 }
             }
         }

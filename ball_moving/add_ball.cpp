@@ -5,9 +5,13 @@
 
 #include "Header.h"
 
-void add_ball(node_ball * Head, int * ball_count, bool * time_flag)
+void add_ball(node_ball * Head, int * ball_count, bool * time_flag, time_t * initial_time)
 {
-    *time_flag = 1;                                       //开始计时
+    if (0 == *time_flag)
+    {
+        *initial_time = time(NULL);                         //若第一次增加球，初始化时间
+    }
+    *time_flag = 1;                                         //开始计时
 
     srand(clock());                                         //种子更新的速度比time()快（得多）
 

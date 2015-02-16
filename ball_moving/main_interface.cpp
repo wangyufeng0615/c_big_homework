@@ -38,7 +38,7 @@ void main_interface_button()
 
 void main_interface_line()
 {
-    setlinestyle(PS_SOLID, 3);      //线宽
+    setlinestyle(PS_SOLID, 2);      //线宽
     setlinecolor(BLUE);             //蓝色
     line(20, 120, 800, 120);        //画横线
     line(800, 20, 800, 580);        //画竖线
@@ -66,9 +66,11 @@ void main_interface_button_text()
     
     //ball_text.lfHeight = 10;
     outtextxy(820,     420, _T("难度"));
-    ball_text.lfHeight = 10;
+    //ball_text.lfHeight = 10;
     outtextxy(895,     422, _T("+"));
     outtextxy(935,     422, _T("-"));
+
+    outtextxy(820,     475, _T("用时:"));
 
     setlinecolor(BLACK);            //设置线条黑色
     rectangle(890, 425, 915, 450);  //难度增加
