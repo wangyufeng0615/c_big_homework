@@ -5,7 +5,7 @@
 
 #include "Header.h"
 
-void select_ball(node_ball * Head, int * ball_count, MOUSEMSG m)
+void select_ball(node_ball * Head, int * ball_count, MOUSEMSG m, struct player * point_player)
 {
     node_ball * p = Head;
 
@@ -27,6 +27,11 @@ void select_ball(node_ball * Head, int * ball_count, MOUSEMSG m)
             break; //跳出循环，此时的i就是被选为1的球的序号-1
         }
         p = p->next;
+    }
+
+    if (0 == flag_select)
+    {
+        point_player->score -= rand()%3+1;                 //如果没选中任何球，减1~3分
     }
 
     //将其他的选中状态变为0

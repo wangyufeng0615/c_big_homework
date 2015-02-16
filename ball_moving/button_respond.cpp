@@ -31,7 +31,7 @@ struct player * point_player, int * game_status, int * level)
                 }
                 if (m.x >= 20 && m.x <= 800 && m.y >= 120 && m.y <= 580) //选择球区里的球
                 {
-                    select_ball(Head, ball_count, m);
+                    select_ball(Head, ball_count, m, point_player);
                 }
                 if (m.x <= 950 && m.x >= 830 && m.y >= 240 && m.y <= 300) //暂停
                 {
