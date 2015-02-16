@@ -5,7 +5,7 @@
 
 #include "Header.h"
 
-static time_t time_pause;
+static time_t time_pause;               //实现暂停时不计时的功能（思路：initial_time += 暂停用时）
 
 void button_respond(struct node_ball * Head, int * ball_count
                     , struct player * point_player, int * game_status

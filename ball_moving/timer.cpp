@@ -13,4 +13,6 @@ void ball_timer(time_t initial_time)
     _stprintf_s(ball_timer_display, _T("%d"), current_time); //将int型转换为TCHAR
 
     outtextxy(900, 475, ball_timer_display);
+
+    return;
 }
