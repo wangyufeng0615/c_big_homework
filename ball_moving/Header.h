@@ -43,7 +43,7 @@ void button_respond(node_ball * Head
                    , int * level
                    , bool * time_flag
                    , time_t * initial_time
-                   , time_t * current_time);   //可传入头结点 球数 玩家信息
+                   , time_t * current_time);            //可传入头结点 球数 玩家信息 等
 void move_ball(node_ball * Head
               , int * ball_count
               , int * level);                           //可传入头结点和球数
@@ -59,7 +59,8 @@ void add_ball(node_ball * Head
               , time_t * initial_time);                 //添加球
 void delete_ball(node_ball * Head
                 , int * ball_count
-                , struct player * point_player);        //删除球
+                , struct player * point_player
+                , time_t current_time);                 //删除球
 void select_ball(node_ball * Head
                 , int * ball_count
                 , MOUSEMSG m

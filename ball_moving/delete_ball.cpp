@@ -7,7 +7,7 @@
 
 void update_score(int add_score, struct player * point_player); //刷新玩家分数
 
-void delete_ball(node_ball * Head, int * ball_count, struct player * point_player)
+void delete_ball(node_ball * Head, int * ball_count, struct player * point_player, time_t current_time)
 {
     struct node_ball * p = Head;            //当前指针指向头结点
     struct node_ball * temp;                //用于free被删除的球
@@ -61,7 +61,7 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
     }
 
     //获胜条件触发：
-    if (point_player->score == (*ball_count) * 10 || point_player->score == 100)
+    if (point_player->score == (*ball_count) * 10 || point_player->score == 50)
     {
         int temp_level = 2;                 //临时的level条件，为了让球的状态刷新一次
         display_ball_count(ball_count);    //更新球数信息
@@ -71,9 +71,9 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
         {
             MessageBox(NULL, _T("你赢啦！球数乘10等于分数！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
         }
-        if (point_player->score == 100)
+        if (point_player->score == 50)
         {
-            MessageBox(NULL, _T("你赢啦！分数定格在100！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+            MessageBox(NULL, _T("你赢啦！分数定格在50！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
         }
 
         //设置时间
@@ -94,8 +94,10 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
         //TCHAR*转char*
         char playername_output[20];
         WideCharToMultiByte(CP_ACP, 0, point_player->playername, 20, playername_output, 20, 0, 0);
-        fprintf(fp_result, "%s\t\t用户名:%s\t\t\t分数:%d\n", time_temp,
-            playername_output, point_player->score);
+        fprintf(fp_result, "%s\t\t用户名:%s\t\t\t用时:%d\n"
+                         , time_temp
+                         , playername_output
+                         , current_time);
         fclose(fp_result);
 
         //弹出提示消息
