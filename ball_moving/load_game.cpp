@@ -67,5 +67,6 @@ int load_game(struct node_ball * Head, struct player * point_player, int * ball_
 
     fclose(fp_read);
     display_player_info(point_player); //导入成功后刷新一次玩家信息
+    clearrectangle(917, 480, 960, 510); //刷新时间区域，避免残留个位数
     return 0;
 }

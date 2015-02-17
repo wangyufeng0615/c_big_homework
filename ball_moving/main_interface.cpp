@@ -65,7 +65,7 @@ void main_interface_button_text()
     outtextxy(865 - 5, 153, _T("导入"));
     
     //ball_text.lfHeight = 10;
-    outtextxy(820,     420, _T("难度"));
+    outtextxy(820,     420, _T("速度"));
     //ball_text.lfHeight = 10;
     outtextxy(895,     422, _T("+"));
     outtextxy(935,     422, _T("-"));

@@ -1,6 +1,7 @@
 /*
 * delete_ball.cpp
 * 删除一个球
+* 触发获胜条件+输出信息
 */
 
 #include "Header.h"
