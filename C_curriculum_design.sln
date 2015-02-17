@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ball_moving", "ball_moving\ball_moving.vcxproj", "{4BB9F1E0-5E86-4FAC-AE69-2F245B7B468E}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{9507D8F3-DB9A-41ED-8786-2E927F9B2600}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,16 @@ Global
 		{4BB9F1E0-5E86-4FAC-AE69-2F245B7B468E}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{4BB9F1E0-5E86-4FAC-AE69-2F245B7B468E}.Release|Win32.ActiveCfg = Release|Win32
 		{4BB9F1E0-5E86-4FAC-AE69-2F245B7B468E}.Release|Win32.Build.0 = Release|Win32
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9507D8F3-DB9A-41ED-8786-2E927F9B2600}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
