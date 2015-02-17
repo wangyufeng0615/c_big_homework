@@ -31,7 +31,11 @@ void select_ball(node_ball * Head, int * ball_count, MOUSEMSG m, struct player *
 
     if (0 == flag_select)
     {
-        point_player->score -= rand()%3+1;                 //如果没选中任何球，减1~3分
+        point_player->score -= rand()%3+1;  //如果没选中任何球，减1~3分
+        if (point_player->score < 0)
+        {
+            point_player->score = 0;        //让分数不为负
+        }
     }
 
     //将其他的选中状态变为0

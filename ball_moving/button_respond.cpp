@@ -46,7 +46,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 {
                     if(!save_game(Head, point_player, ball_count, *current_time))
                     {
-                        MessageBox(NULL, _T("保存状态至save.txt成功！"), _T("提示"),
+                        MessageBox(NULL, _T("保存状态至save.dat成功！"), _T("提示"),
                             MB_SYSTEMMODAL | MB_ICONASTERISK);
                     }
                 }
@@ -56,7 +56,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                     {
                         *time_flag = 1;                                   //恢复计时状态
                         *initial_time = time(NULL) - *current_time;       //导入时间，继续计时
-                        MessageBox(NULL, _T("从save.txt读取状态成功！"), _T("提示"),
+                        MessageBox(NULL, _T("从save.dat读取状态成功！"), _T("提示"),
                             MB_SYSTEMMODAL | MB_ICONASTERISK);
                     }
                 }
