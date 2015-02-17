@@ -46,7 +46,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 {
                     if(difficulty_message_flag)
                     {
-                        MessageBox(NULL, _T("调速仅供调试，请在默认速度下挑战游戏~\n此信息只显示一次"), _T("关于速度调节"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+                        MessageBox(NULL, _T("调速仅供调试，不是游戏的一部分，请在默认速度下挑战游戏~\n此信息只显示一次"), _T("关于速度调节"),MB_ICONASTERISK | MB_SYSTEMMODAL);
                         difficulty_message_flag = false;
                     }
 
@@ -64,7 +64,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 {
                     if(difficulty_message_flag)
                     {
-                        MessageBox(NULL, _T("调速仅供调试，请在默认速度下挑战游戏~\n此信息只显示一次"), _T("关于速度调节"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+                        MessageBox(NULL, _T("调速仅供调试，不是游戏的一部分，请在默认速度下挑战游戏~\n此信息只显示一次"), _T("关于速度调节"),MB_ICONASTERISK | MB_SYSTEMMODAL);
                         difficulty_message_flag = false;
                     }
 
