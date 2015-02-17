@@ -29,9 +29,12 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
             }
 
             //增加分数
-            int add_score;
-            add_score = _wtoi(temp->info_ball.figure);
-            update_score(add_score, point_player);
+            if (1 == temp->info_ball.select_status)         //若球是未选中状态下被删除，不加分
+            {
+                int add_score;
+                add_score = _wtoi(temp->info_ball.figure);
+                update_score(add_score, point_player);
+            }
 
             //更新玩家信息
             setbkcolor(WHITE);
