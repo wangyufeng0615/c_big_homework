@@ -46,7 +46,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 {
                     if(difficulty_message_flag)
                     {
-                        MessageBox(NULL, _T("调速仅供调试，请在默认速度下挑战游戏~\n本信息只显示一次"), _T("关于速度"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+                        MessageBox(NULL, _T("调速仅供调试，请在默认速度下挑战游戏~\n此信息只显示一次"), _T("关于速度调节"),MB_ICONASTERISK | MB_SYSTEMMODAL);
                         difficulty_message_flag = false;
                     }
 
@@ -64,7 +64,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 {
                     if(difficulty_message_flag)
                     {
-                        MessageBox(NULL, _T("调速仅供调试，请在默认速度下挑战游戏~\n本信息只显示一次"), _T("关于速度"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+                        MessageBox(NULL, _T("调速仅供调试，请在默认速度下挑战游戏~\n此信息只显示一次"), _T("关于速度调节"),MB_ICONASTERISK | MB_SYSTEMMODAL);
                         difficulty_message_flag = false;
                     }
 
@@ -99,7 +99,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                 {
                     if(!save_game(Head, point_player, ball_count, *current_time))
                     {
-                        MessageBox(NULL, _T("保存状态至save.dat成功！"), _T("提示"),
+                        MessageBox(NULL, _T("保存状态至 save.dat 成功！"), _T("提示"),
                             MB_SYSTEMMODAL | MB_ICONASTERISK);
                     }
                 }
@@ -111,7 +111,7 @@ void button_respond(struct node_ball * Head, int * ball_count
                         *time_flag = true;                                //恢复计时状态
                         *game_status = true;                              //恢复游戏进行状态
                         *initial_time = time(NULL) - *current_time;       //导入时间，继续计时
-                        MessageBox(NULL, _T("从save.dat读取状态成功！"), _T("提示"),
+                        MessageBox(NULL, _T("从 save.dat 读取状态成功！"), _T("提示"),
                             MB_SYSTEMMODAL | MB_ICONASTERISK);
                     }
                 }
