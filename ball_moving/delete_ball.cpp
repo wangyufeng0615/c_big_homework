@@ -64,12 +64,12 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
     if (point_player->score == (*ball_count) * 10 || point_player->score == 50)
     {
         int temp_level = 2;                 //临时的level条件，为了让球的状态刷新一次
-        display_ball_count(ball_count);    //更新球数信息
+        display_ball_count(ball_count);     //更新球数信息
         move_ball(Head, ball_count, &temp_level); //球的运动
 
         if (point_player->score == (*ball_count) * 10)
         {
-            MessageBox(NULL, _T("你赢啦！球数乘10等于分数！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
+            MessageBox(NULL, _T("你赢啦！分数等于球数乘10！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
         }
         if (point_player->score == 50)
         {
