@@ -76,5 +76,7 @@ void main_interface_button_text()
     rectangle(890, 425, 915, 450);  //难度增加
     rectangle(930, 425, 955, 450);  //难度减小
 
+    outtextxy(820, 530, _T("球数:"));
+
     return;
 }
