@@ -12,7 +12,7 @@ int load_game(struct node_ball * Head, struct player * point_player, int * ball_
 
     //打开存档
     FILE * fp_read;
-    if(fopen_s(&fp_read, "save.txt", "r"))
+    if(fopen_s(&fp_read, "save.dat", "r"))
     {
         MessageBox(NULL, _T("存档文件打开失败！"), _T("错误"), MB_SYSTEMMODAL);
         return -1;
@@ -30,7 +30,7 @@ int load_game(struct node_ball * Head, struct player * point_player, int * ball_
     //把玩家名字从char转为TCHAR
     MultiByteToWideChar(CP_ACP, 0, playername_input, 20, point_player->playername, 20);
 
-    //在读取状态之前，得先确保有跟save.txt中球数一样多个球的
+    //在读取状态之前，得先确保有跟save.dat中球数一样多个球的
     struct node_ball * s; //新节点
     int j;
     for (j = 0; j < *ball_count; j++)
@@ -67,5 +67,6 @@ int load_game(struct node_ball * Head, struct player * point_player, int * ball_
 
     fclose(fp_read);
     display_player_info(point_player); //导入成功后刷新一次玩家信息
+    clearrectangle(917, 480, 960, 510); //刷新时间区域，避免残留个位数
     return 0;
 }

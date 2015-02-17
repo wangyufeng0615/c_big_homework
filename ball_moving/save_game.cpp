@@ -11,7 +11,7 @@ int save_game(struct node_ball * Head, struct player * point_player, int * ball_
 
     //打开存档
     FILE * fp_save;
-    if(fopen_s(&fp_save, "save.txt", "w"))
+    if(fopen_s(&fp_save, "save.dat", "w"))
     {
         MessageBox(NULL, _T("存档文件打开失败！"), _T("错误"), MB_SYSTEMMODAL);
         return -1;
