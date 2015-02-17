@@ -29,9 +29,12 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
             }
 
             //增加分数
-            int add_score;
-            add_score = _wtoi(temp->info_ball.figure);
-            update_score(add_score, point_player);
+            if (1 == temp->info_ball.select_status)         //若球是未选中状态下被删除，不加分
+            {
+                int add_score;
+                add_score = _wtoi(temp->info_ball.figure);
+                update_score(add_score, point_player);
+            }
 
             //更新玩家信息
             setbkcolor(WHITE);
@@ -61,13 +64,13 @@ void delete_ball(node_ball * Head, int * ball_count, struct player * point_playe
     }
 
     //获胜条件触发：
-    if (point_player->score == (*ball_count) * 20 || point_player->score == 50)
+    if ((point_player->score == (*ball_count) * 20  && *ball_count != 0) || point_player->score == 50)
     {
         int temp_level = 2;                 //临时的level条件，为了让球的状态刷新一次
         display_ball_count(ball_count);     //更新球数信息
         move_ball(Head, ball_count, &temp_level); //球的运动
 
-        if (point_player->score == (*ball_count) * 20)
+        if (point_player->score == (*ball_count) * 20  && *ball_count != 0)
         {
             MessageBox(NULL, _T("你赢啦！分数等于球数的20倍！"), _T("Win!"),MB_ICONASTERISK | MB_SYSTEMMODAL);
         }
